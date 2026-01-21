@@ -9,4 +9,4 @@ FROM Employees
 GROUP BY event_day, emp_id;
 
 -- Source:
--- LeetCode 1757 — Recyclable and Low Fat Products
+-- LeetCode 1741 — Find Total Time Spent by Each Employee
