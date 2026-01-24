@@ -1,13 +1,16 @@
--- Day 1: Filtering Products by Business Rules
+-- Day 7: NULL Semantics — Classifying Hierarchical Data
 
 -- Question:
--- Which products meet both health and sustainability criteria?
+-- Classify each node in an organizational hierarchy as Root, Inner, or Leaf.
 
 -- Solution
-SELECT product_id
-FROM Products
-WHERE low_fats = 'Y' 
-    AND recyclable = 'Y';
+SELECT id,
+    CASE 
+        WHEN p_id IS NULL THEN 'Root'
+        WHEN id NOT IN (SELECT DISTINCT p_id FROM Tree WHERE p_id IS NOT NULL) THEN 'Leaf'
+        ELSE 'Inner'
+    END AS type
+FROM Tree;
 
 -- Source:
--- LeetCode 1757 — Recyclable and Low Fat Products
+-- LeetCode 608 — Tree Node
