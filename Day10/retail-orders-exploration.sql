@@ -54,3 +54,17 @@ LIMIT 5;
 -- Highlights revenue-driving products.
 -- Often used for promotions and demand planning.
 
+--------------------------------------------------
+-- 4. Average Order Value (AOV)
+--------------------------------------------------
+SELECT
+    ROUND(
+        SUM(list_price * quantity * (1 - discount / 100.0))
+        / COUNT(DISTINCT order_id),
+        2
+    ) AS aov
+FROM retail_orders;
+
+-- Insight:
+-- AOV measures average customer spend per order.
+-- Increasing AOV directly increases revenue without acquiring new customers.
