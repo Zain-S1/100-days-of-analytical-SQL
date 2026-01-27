@@ -1,10 +1,10 @@
 -- Day 10: Kaggle Dataset Exploration — Retail Orders
 
 -- Columns:
--- Order Id, Order Date, Ship Mode, Segment,
--- Country, City, State, Postal Code, Region,
--- Category, Sub Category, Product Id,
--- cost price, List Price, Quantity, Discount Percent
+-- order_id, order_date, ship_mode, segment,
+-- country, city, state, postal_code, region,
+-- category, sub_category, product_id,
+-- cost_price, list_price, quantity, discount
 
 --------------------------------------------------
 -- 1. Total Revenue
@@ -68,3 +68,9 @@ FROM retail_orders;
 -- Insight:
 -- AOV measures average customer spend per order.
 -- Increasing AOV directly increases revenue without acquiring new customers.
+
+--------------------------------------------------
+-- Next Steps
+-- * Revenue trends over time
+-- * Regional performance analysis
+-- * Discount impact on revenue and volume
