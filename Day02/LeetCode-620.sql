@@ -1,13 +1,18 @@
--- Day 1: Filtering Products by Business Rules
+-- Day 2: Applying Conditional Filters
 
 -- Question:
--- Which products meet both health and sustainability criteria?
+-- Which movies meet the platform’s quality criteria?
 
 -- Solution
-SELECT product_id
-FROM Products
-WHERE low_fats = 'Y' 
-    AND recyclable = 'Y';
+SELECT 
+    id, 
+    movie, 
+    description, 
+    rating
+FROM Cinema
+WHERE (MOD(id, 2) <> 0) 
+    AND (description <> 'boring')
+ORDER BY rating DESC;
 
 -- Source:
--- LeetCode 1757 — Recyclable and Low Fat Products
+-- LeetCode 620 — Not Boring Movies
