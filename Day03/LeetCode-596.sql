@@ -1,13 +1,14 @@
--- Day 1: Filtering Products by Business Rules
+-- Day 3: Grouping and Aggregation with HAVING
 
 -- Question:
--- Which products meet both health and sustainability criteria?
+-- Which classes have a student count exceeding the enrollment threshold?
 
 -- Solution
-SELECT product_id
-FROM Products
-WHERE low_fats = 'Y' 
-    AND recyclable = 'Y';
+SELECT 
+    class
+FROM Courses
+GROUP BY class
+HAVING COUNT(student) >= 5;
 
 -- Source:
--- LeetCode 1757 — Recyclable and Low Fat Products
+-- LeetCode 596 — Classes With at Least 5 Students
