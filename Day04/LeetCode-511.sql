@@ -1,13 +1,14 @@
--- Day 1: Filtering Products by Business Rules
+-- Day4: Deduplication and Unique Entity Identification
 
 -- Question:
--- Which products meet both health and sustainability criteria?
+-- What is the first login date for each user?
 
 -- Solution
-SELECT product_id
-FROM Products
-WHERE low_fats = 'Y' 
-    AND recyclable = 'Y';
+SELECT 
+    player_id, 
+    MIN(event_date) AS first_login
+FROM Activity
+GROUP BY player_id;
 
 -- Source:
--- LeetCode 1757 — Recyclable and Low Fat Products
+-- LeetCode 511 — Game Play Analysis I
