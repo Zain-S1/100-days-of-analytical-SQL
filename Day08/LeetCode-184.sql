@@ -1,14 +1,21 @@
--- Day 8: Self-JOINs — Comparing Related Records
+-- Day 8: Group-Level Comparison and Exclusion
 
 -- Question:
--- Which employees earn more than their direct managers?
+-- Which employees earn the highest salary within their department?
 
 -- Solution
-SELECT e.name AS Employee
+SELECT 
+    d.name AS Department, 
+    e.name AS Employee, 
+    e.salary AS Salary
 FROM Employee e
-INNER JOIN Employee m
-    ON m.id = e.managerId
-WHERE e.salary > m.salary;
+JOIN Department d
+    ON e.departmentId = d.id
+WHERE e.salary = (
+    SELECT MAX(salary)
+    FROM Employee
+    WHERE departmentId = e.departmentId
+);
 
 -- Source:
--- LeetCode 181 — Employees Earning More Than Their Managers
+-- LeetCode 184 — Department Highest Salary
