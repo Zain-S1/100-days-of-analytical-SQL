@@ -1,10 +1,12 @@
 -- Day 10: Kaggle Dataset Exploration — Brazilian E-Commerce
 
--- Columns:
--- order_id, order_date, ship_mode, segment,
--- country, city, state, postal_code, region,
--- category, sub_category, product_id,
--- cost_price, list_price, quantity, discount
+-- Tables:
+-- (1) Orders:
+-- order_id, order_item_id, product_id,
+-- seller_id, shipping_limit_date, price, freight_value
+-- (2) order_items:
+--
+--
 
 --------------------------------------------------
 -- 1. Total Revenue
