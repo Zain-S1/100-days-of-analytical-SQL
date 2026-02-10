@@ -53,5 +53,6 @@ FROM order_items;
 
 --------------------------------------------------
 -- Next Steps
--- * Revenue trends over time
--- * Regional performance analysis
+-- * Analyze trends over time (daily and monthly)
+-- * Work with dates and time-based filters
+-- * Identify repeat vs first-time customers
