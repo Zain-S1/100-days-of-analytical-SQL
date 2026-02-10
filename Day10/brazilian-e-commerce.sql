@@ -17,62 +17,41 @@ SELECT
     SUM(price + freight_value) AS total_revenue
 FROM order_items
 
--- Insight:
--- This represents the gross value generated from all completed orders, 
--- including logistics costs.
-
 --------------------------------------------------
--- 2. Revenue by Category
+-- 2. Revenue by Order Status
 --------------------------------------------------
 SELECT
-    category,
-    ROUND(
-        SUM(list_price * quantity * (1 - discount / 100.0)),
-        2
-    ) AS revenue
-FROM retail_orders
-GROUP BY category
+    o.order_status,
+    SUM(oi.price + oi.freight_value) AS revenue
+FROM orders o
+JOIN order_items oi
+    ON o.order_id = oi.order_id
+GROUP BY o.order_status
 ORDER BY revenue DESC;
-
--- Insight:
--- Identifies which categories contribute most to revenue.
--- Useful for assortment and strategic focus decisions.
 
 --------------------------------------------------
 -- 3. Top 5 Products by Revenue
 --------------------------------------------------
 SELECT
     product_id,
-    ROUND(
-        SUM(list_price * quantity * (1 - discount / 100.0)),
-        2
-    ) AS revenue
-FROM retail_orders
+    SUM(price + freight_value) AS product_revenue
+FROM order_items
 GROUP BY product_id
-ORDER BY revenue DESC
+ORDER BY product_revenue DESC
 LIMIT 5;
-
--- Insight:
--- Highlights revenue-driving products.
--- Often used for promotions and demand planning.
 
 --------------------------------------------------
 -- 4. Average Order Value (AOV)
 --------------------------------------------------
 SELECT
     ROUND(
-        SUM(list_price * quantity * (1 - discount / 100.0))
+        SUM(price + freight_value)
         / COUNT(DISTINCT order_id),
         2
-    ) AS aov
-FROM retail_orders;
-
--- Insight:
--- AOV measures average customer spend per order.
--- Increasing AOV directly increases revenue without acquiring new customers.
+    ) AS average_order_value
+FROM order_items;
 
 --------------------------------------------------
 -- Next Steps
 -- * Revenue trends over time
 -- * Regional performance analysis
--- * Discount impact on revenue and volume
