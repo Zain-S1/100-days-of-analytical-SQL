@@ -14,14 +14,12 @@
 -- 1. Total Revenue
 --------------------------------------------------
 SELECT
-    ROUND(
-        SUM(list_price * quantity * (1 - discount / 100.0)),
-        2
-    ) AS total_revenue
-FROM retail_orders
+    SUM(price + freight_value) AS total_revenue
+FROM order_items
 
 -- Insight:
--- Establishes top-line sales performance.
+-- This represents the gross value generated from all completed orders, 
+-- including logistics costs.
 
 --------------------------------------------------
 -- 2. Revenue by Category
