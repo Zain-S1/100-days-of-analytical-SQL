@@ -1,12 +1,14 @@
 -- Day 10: Kaggle Dataset Exploration — Brazilian E-Commerce
 
 -- Tables:
--- (1) Orders:
--- order_id, order_item_id, product_id,
--- seller_id, shipping_limit_date, price, freight_value
+
+-- (1) orders:
+-- order_id, customer_id, order_status
+-- order_purchase_timestamp
+
 -- (2) order_items:
---
---
+-- order_id, order_item_id, product_id,
+-- price, freight_value
 
 --------------------------------------------------
 -- 1. Total Revenue
