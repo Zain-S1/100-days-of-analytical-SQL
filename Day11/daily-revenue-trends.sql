@@ -5,7 +5,7 @@
 
 -- Solution
 SELECT
-    `Order Date` AS order_date
+    `Order Date` AS order_date,
     ROUND(
         SUM(list_price * quantity * (1 - discount / 100.0)),
         2
