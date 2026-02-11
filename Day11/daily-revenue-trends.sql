@@ -12,7 +12,7 @@ SELECT
     ) AS total_revenue
 FROM retail_orders
 GROUP BY order_date
-ORDER BY `Order Date` DESC;
+ORDER BY order_date DESC;
 
 -- Source:
 -- Kaggle Dataset — Retail Order
