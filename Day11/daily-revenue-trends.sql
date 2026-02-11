@@ -11,7 +11,7 @@ SELECT
         2
     ) AS total_revenue
 FROM retail_orders
-GROUP BY `Order Date`
+GROUP BY order_date
 ORDER BY `Order Date` DESC;
 
 -- Source:
