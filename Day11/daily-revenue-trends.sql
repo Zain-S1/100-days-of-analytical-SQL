@@ -15,4 +15,4 @@ GROUP BY order_date
 ORDER BY order_date DESC;
 
 -- Source:
--- Kaggle Dataset — Retail Order
+-- Kaggle Dataset — Retail Orders
