@@ -1,4 +1,4 @@
--- Day 11: Daily Revenue Trend Analysis
+-- Day 12: Monthly Revenue Aggregation
 
 -- Question:
 -- What is the total revenue generated per day?
