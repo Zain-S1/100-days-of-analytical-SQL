@@ -1,7 +1,8 @@
 -- Day 13: First-Time vs Returning Customers
 
 -- Question:
--- What is the total revenue generated per month?
+-- For each order, is the customer making their first purchase
+-- or are they a returning customer?
 
 -- Solution
 SELECT
