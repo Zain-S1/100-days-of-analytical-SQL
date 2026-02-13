@@ -1,4 +1,4 @@
--- Day 12: Monthly Revenue Aggregation
+-- Day 13: First-Time vs Returning Customers
 
 -- Question:
 -- What is the total revenue generated per month?
