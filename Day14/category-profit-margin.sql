@@ -21,4 +21,4 @@ FROM orders o1
 ORDER BY o1.order_date;
 
 -- Source:
--- Generic Orders Table (Concept Exercise)
+-- Kaggle Dataset — Retail Orders
