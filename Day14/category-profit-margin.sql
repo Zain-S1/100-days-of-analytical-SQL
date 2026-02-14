@@ -5,8 +5,9 @@
 
 -- Solution
 SELECT
-    o1.order_id,
-    o1.order_date,
+    category,
+    SUM(list_price * quantity * (1 - discount)
+    ) AS total_profit,
     o1.customer_id,
     CASE
         WHEN o1.order_date = (
