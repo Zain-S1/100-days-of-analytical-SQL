@@ -5,7 +5,7 @@
 
 -- Solution
 SELECT
-    category,
+    discount,
     SUM(
         (list_price * quantity * (1 - discount / 100.0))
         - (cost_price * quantity)
@@ -22,8 +22,8 @@ SELECT
         list_price * quantity * (1 - discount / 100.0)
     ) AS profit_margin
 FROM retail_orders
-GROUP BY category
-ORDER BY profit_margin DESC;
+GROUP BY discount
+ORDER BY discount;
 
 -- Source:
 -- Kaggle Dataset — Retail Orders
