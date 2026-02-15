@@ -27,3 +27,9 @@ ORDER BY discount;
 
 -- Source:
 -- Kaggle Dataset — Retail Orders
+-----------------------------------------------------------
+
+-- Insights:
+-- * Discounts can increase sales volume but may reduce profitability.
+-- * Evaluating profit margin across discount levels helps determine
+-- whether discount strategies create or destroy value.
