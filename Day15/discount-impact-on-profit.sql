@@ -1,7 +1,7 @@
--- Day 14: Profit Margin by Category
+-- Day 15: Discount Impact on Profit
 
 -- Question:
--- What is the profit margin for each product category?
+-- How does discount level affect total profit and profit margin?
 
 -- Solution
 SELECT
