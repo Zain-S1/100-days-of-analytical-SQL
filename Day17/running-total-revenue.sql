@@ -4,22 +4,24 @@
 -- What is the cumulative revenue over time?
 
 -- Solution
-WITH product_profit AS (
+WITH daily_revenue AS (
     SELECT
-        product_id,
+        order_date,
         SUM(
-            (list_price * quantity * (1 - discount / 100.0))
-            - (cost_price * quantity)
-        ) AS total_profit
+            list_price * quantity * (1 - discount / 100.0)
+        ) AS daily_revenue
     FROM retail_orders
-    GROUP BY product_id
+    GROUP BY order_date
 )
 SELECT
-    product_id,
-    total_profit,
-    RANK() OVER (ORDER BY total_profit DESC) AS profit_rank
-FROM product_profit
-ORDER BY profit_rank;
+    order_date,
+    daily_revenue,
+    SUM(daily_revenue)
+        OVER (ORDER BY order_date
+              ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+        AS cumulative_revenue
+FROM daily_revenue
+ORDER BY order_date;
 
 -- Source:
 -- Kaggle Dataset — Retail Orders
