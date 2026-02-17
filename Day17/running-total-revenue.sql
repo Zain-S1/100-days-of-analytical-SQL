@@ -1,4 +1,4 @@
--- Day 16: Ranking Products by Profit
+-- Day 17: Running Total Revenue
 
 -- Question:
 -- What is the profit ranking of each product based on total generated profit?
