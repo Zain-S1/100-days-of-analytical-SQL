@@ -1,7 +1,7 @@
 -- Day 17: Running Total Revenue
 
 -- Question:
--- What is the profit ranking of each product based on total generated profit?
+-- What is the cumulative revenue over time?
 
 -- Solution
 WITH product_profit AS (
