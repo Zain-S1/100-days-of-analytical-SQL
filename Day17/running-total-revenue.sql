@@ -17,9 +17,10 @@ SELECT
     order_date,
     daily_revenue,
     SUM(daily_revenue)
-        OVER (ORDER BY order_date
-              ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
-        AS cumulative_revenue
+        OVER (
+            ORDER BY order_date
+            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+        ) AS cumulative_revenue
 FROM daily_revenue
 ORDER BY order_date;
 
