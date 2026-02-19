@@ -16,11 +16,15 @@ WITH daily_revenue AS (
 SELECT
     order_date,
     daily_revenue,
-    AVG(daily_revenue)
+    LAG(daily_revenue)
         OVER (
             ORDER BY order_date
-            ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
-        ) AS cumulative_revenue
+        ) previous_day_revenue,
+    (
+        (daily_revenue - LAG(daily_revenue) OVER (ORDER BY order_date))
+        /
+        LAG(daily_revenue) OVER (ORDER BY order_date)
+    ) * 100 AS day_over_day_growth_pct
 FROM daily_revenue
 ORDER BY order_date;
 
