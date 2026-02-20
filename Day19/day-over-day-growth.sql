@@ -12,20 +12,27 @@ WITH daily_revenue AS (
         ) AS daily_revenue
     FROM retail_orders
     GROUP BY order_date
+),  
+revenue_with_lag AS (
+    SELECT
+        order_date,
+        daily_revenue,
+        LAG(daily_revenue)
+            OVER (
+                ORDER BY order_date
+            ) AS previous_day_revenue
+    FROM daily_revenue
 )
+    
 SELECT
     order_date,
     daily_revenue,
-    LAG(daily_revenue)
-        OVER (
-            ORDER BY order_date
-        ) previous_day_revenue,
+    previous_day_revenue,
     (
-        (daily_revenue - LAG(daily_revenue) OVER (ORDER BY order_date))
-        /
-        LAG(daily_revenue) OVER (ORDER BY order_date)
+        (daily_revenue - previous_day_revenue)
+        / previous_day_revenue
     ) * 100 AS day_over_day_growth_pct
-FROM daily_revenue
+FROM revenue_with_lag
 ORDER BY order_date;
 
 -- Source:
