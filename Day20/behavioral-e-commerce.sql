@@ -23,9 +23,12 @@ FROM ecommerce_events
 WHERE event_type = 'purchase';
 
 --------------------------------------------------
--- 3. Top 5 Products by Revenue
+-- 3. Total Sessions With Purchases
 --------------------------------------------------
-
+SELECT
+    COUNT(DISTINCT user_session) AS purchasing_sessions
+FROM ecommerce_events
+WHERE event_type = 'purchase';
 
 --------------------------------------------------
 -- 4. Average Order Value (AOV)
