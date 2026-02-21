@@ -15,11 +15,19 @@
 
 ## 🔎 Observations
 
-- Revenue concentration across categories indicates potential
+- 💰 **Total Revenue reached 203.85M**, which indicates strong purchasing activity during the month.
   high-demand segments during the early Q4 period.
-- Conversion rate reflects monetization efficiency during
-  a high-traffic retail season.
-- AOV provides insight into purchasing intensity per session.
+- 👥 **263,445 unique users generated purchases**, showing broad customer participation
+  rather than reliance on a small user base.
+- 🛒 **466,799 purchasing sessions** suggest that many users completed multiple transactions
+  or that sessions often included multiple purchases.
+- 📈 **Session Conversion Rate was 7.27%**, meaning roughly 7 out of every 100 sessions resulted in a purchase.
+  This reflects moderate traffic monetization efficiency and leaves room for funnel optimization.
+- 🏷️ **Revenue is heavily concentrated in electronics**.
+  Smartphones alone account for a large share of total revenue, indicating strong demand
+  and possible dependency on this category.
+- 📦 **Average Order Value (AOV) was 436.69**, suggesting relatively high-ticket purchases.
+  This aligns with the dominance of electronics products.
 
 
 ## 🚀 Next Steps
