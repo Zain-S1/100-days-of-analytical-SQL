@@ -19,11 +19,11 @@
 - **263,445 unique users generated purchases**, shows broad customer participation.
 - **466,799 purchasing sessions** suggest that many users completed multiple transactions
   or that sessions often included multiple purchases.
-- **Session Conversion Rate was 7.27%**, meaning roughly 7 out of every 100 sessions resulted in a purchase.
+- **Session Conversion Rate was 7.27%**, meaning about 7 out of every 100 sessions ended with a purchase.
 - **Revenue is heavily concentrated in electronics**.
-  Smartphones alone account for a large share of total revenue, indicating strong demand
+  Smartphones alone account for a large share of total revenue (~156.7M), indicating strong demand
   and possible dependency on this category.
-- **Average Order Value (AOV) was 436.69**.
+- **Average Order Value (AOV) was 436.69**, which suggests relatively high-value purchases.
 
 
 ## 🚀 Next Steps
