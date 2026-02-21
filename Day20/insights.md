@@ -1,10 +1,10 @@
-# Day 20 – Behavioral E-Commerce Performance Summary
+# 📊 Day 20 – Behavioral E-Commerce Performance Summary
 
-## Time Period
+## 🗓️ Time Period
 October 1, 2019 – November 30, 2019 (UTC)
 
 
-## Key Metrics
+## 📌 Key Metrics
 
 ### Total Revenue
 Represents total purchase value generated during October and November 2019.
@@ -24,4 +24,19 @@ Highlights which product categories drove the highest revenue.
 ### Average Order Value (AOV)
 Represents the average revenue generated per purchasing session.
 
----
+
+## 🔎 Observations
+
+- Revenue concentration across categories indicates potential
+  high-demand segments during the early Q4 period.
+- Conversion rate reflects monetization efficiency during
+  a high-traffic retail season.
+- AOV provides insight into purchasing intensity per session.
+
+
+## 🚀 Next Steps
+
+- Compare performance.
+- Analyze daily revenue trends.
+- Build funnel analysis (view → cart → purchase).
+- Evaluate repeat purchasing behavior.
