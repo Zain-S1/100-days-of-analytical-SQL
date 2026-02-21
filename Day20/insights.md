@@ -1,8 +1,5 @@
 # 📊 Day 20 – Behavioral E-Commerce Performance Summary
 
-## 🗓️ Time Period
-October 1, 2019 – November 30, 2019 (UTC)
-
 
 ## 📌 Key Metrics
 
