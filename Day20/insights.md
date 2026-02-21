@@ -3,7 +3,6 @@
 ## Time Period
 October 1, 2019 – November 30, 2019 (UTC)
 
----
 
 ## Key Metrics
 
