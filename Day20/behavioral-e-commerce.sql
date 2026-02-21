@@ -17,7 +17,10 @@ WHERE event_type = 'purchase';
 --------------------------------------------------
 -- 2. Total Unique Purchasing Users
 --------------------------------------------------
-
+SELECT
+    COUNT(DISTINCT user_id) AS unique_purchasing_users
+FROM ecommerce_events
+WHERE event_type = 'purchase';
 
 --------------------------------------------------
 -- 3. Top 5 Products by Revenue
