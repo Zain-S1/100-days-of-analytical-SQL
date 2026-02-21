@@ -1,2 +1,2 @@
-# 100 Days of SQL
-100 days of SQL practice, transforming queries into business insights.
+# 100 Days of Analytical SQL
+100 days of SQL Analysis and Business Reasoning, transforming queries into business insights.
