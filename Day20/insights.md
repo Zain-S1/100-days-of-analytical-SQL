@@ -5,8 +5,8 @@
 
 | Metric | Description |
 |--------|------------|
-| **Total Revenue** | Represents total purchase value generated during October and November 2019. |
-| **Unique Purchasing Users** | Indicates how many distinct users completed purchases in this period. |
+| **Total Revenue** | Represents total purchase value generated. |
+| **Unique Purchasing Users** | Indicates how many distinct users completed purchases. |
 | **Purchasing Sessions** | Shows how many sessions resulted in at least one purchase. |
 | **Session Conversion Rate** | Measures the proportion of sessions that converted into purchases. |
 | **Top Revenue Categories** | Highlights which product categories drove the highest revenue. |
@@ -24,7 +24,7 @@
 
 ## 🚀 Next Steps
 
-- Compare performance.
+- Compare performance with other months.
 - Analyze daily revenue trends.
 - Build funnel analysis (view → cart → purchase).
 - Evaluate repeat purchasing behavior.
