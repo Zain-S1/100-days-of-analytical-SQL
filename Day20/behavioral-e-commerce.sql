@@ -51,4 +51,31 @@ LEFT JOIN purchase_sessions p
     ON s.user_session = p.user_session;
 
 --------------------------------------------------
+-- 5. Top 5 Categories by Revenue
+--------------------------------------------------
+SELECT
+    category_code,
+    SUM(price) AS category_revenue
+FROM ecommerce_events
+WHERE event_type = 'purchase'
+GROUP BY category_code
+ORDER BY category_revenue DESC
+LIMIT 5;
 
+--------------------------------------------------
+-- 6. Average Order Value (Session-Based)
+--------------------------------------------------
+WITH session_revenue AS (
+    SELECT
+        user_session,
+        SUM(price) AS session_total
+    FROM ecommerce_events
+    WHERE event_type = 'purchase'
+    GROUP BY user_session
+)
+
+SELECT
+    AVG(session_total) AS average_order_value
+FROM session_revenue;
+
+--------------------------------------------------
