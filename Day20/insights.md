@@ -1,27 +1,27 @@
 # 📊 Day 20 – Behavioral E-Commerce Performance Summary
 
-### 🗓️ Time Period
+## 🗓️ Time Period
 October 1, 2019 – November 30, 2019 (UTC)
 
 
-### 📌 Key Metrics
+## 📌 Key Metrics
 
-#### 1. Total Revenue
+### 1. Total Revenue
 Represents total purchase value generated during October and November 2019.
 
-#### 2. Unique Purchasing Users
+### 2. Unique Purchasing Users
 Indicates how many distinct users completed purchases in this period.
 
-### Purchasing Sessions
+### 3. Purchasing Sessions
 Shows how many sessions resulted in at least one purchase.
 
-### Session Conversion Rate
+### 4. Session Conversion Rate
 Measures the proportion of sessions that converted into purchases.
 
-### Top Revenue Categories
+### 5. Top Revenue Categories
 Highlights which product categories drove the highest revenue.
 
-### Average Order Value (AOV)
+### 6. Average Order Value (AOV)
 Represents the average revenue generated per purchasing session.
 
 
