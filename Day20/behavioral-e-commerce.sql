@@ -7,12 +7,15 @@
 -- category_code, brand, price, user_id, user_session
 
 --------------------------------------------------
--- 1. Total Revenue
+-- 1. Total Revenue (Purchases Only)
 --------------------------------------------------
-
+SELECT
+    SUM(price) AS total_revenue
+FROM ecommerce_events
+WHERE event_type = 'purchase';
 
 --------------------------------------------------
--- 2. Revenue by Order Status
+-- 2. Total Unique Purchasing Users
 --------------------------------------------------
 
 
