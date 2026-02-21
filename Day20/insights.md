@@ -1,15 +1,15 @@
 # 📊 Day 20 – Behavioral E-Commerce Performance Summary
 
-## 🗓️ Time Period
+### 🗓️ Time Period
 October 1, 2019 – November 30, 2019 (UTC)
 
 
-## 📌 Key Metrics
+### 📌 Key Metrics
 
-### Total Revenue
+#### 1. Total Revenue
 Represents total purchase value generated during October and November 2019.
 
-### Unique Purchasing Users
+#### 2. Unique Purchasing Users
 Indicates how many distinct users completed purchases in this period.
 
 ### Purchasing Sessions
