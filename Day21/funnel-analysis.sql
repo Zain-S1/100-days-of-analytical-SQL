@@ -8,9 +8,11 @@
 WITH session_steps AS (
     SELECT
         user_session,
-        (CASE WHEN 
-    FROM retail_orders
-    GROUP BY order_date
+        MAX(CASE WHEN event_type = 'view' THEN 1 ELSE 0) AS viewed,
+        MAX(CASE WHEN event_type = 'cart' THEN 1 ELSE 0) AS added_to_cart,
+        MAX(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0) AS purchased
+    FROM ecommerce_events
+    GROUP BY user_session
 ),  
 revenue_with_lag AS (
     SELECT
