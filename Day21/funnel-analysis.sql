@@ -1,15 +1,14 @@
 -- Day 21: Funnel Analysis (View → Cart → Purchase)
 
 -- Question:
--- What is the percentage change in revenue compared to the previous day?
+-- How efficiently do user sessions progress 
+-- from viewing products to completing a purchase?
 
 -- Solution
-WITH daily_revenue AS (
+WITH session_steps AS (
     SELECT
-        order_date,
-        SUM(
-            list_price * quantity * (1 - discount / 100.0)
-        ) AS daily_revenue
+        user_session,
+        (CASE WHEN 
     FROM retail_orders
     GROUP BY order_date
 ),  
@@ -36,4 +35,4 @@ FROM revenue_with_lag
 ORDER BY order_date;
 
 -- Source:
--- Kaggle Dataset — Behavioral E-Commerce Data
+-- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
