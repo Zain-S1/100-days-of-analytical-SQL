@@ -14,6 +14,25 @@ WITH user_purchase_counts AS (
     GROUP BY user_id
 ),
 
+user_type AS (
+    SELECT
+    user_id,
+        CASE
+            WHEN purchase_count > 1 THEN 'Repeat Buyer'
+            ELSE 'One-Time Buyer'
+        END AS buyer_type
+    FROM user_purchase_counts
+),
+
+purchase_revenue AS (
+    SELECT
+        user_id,
+        SUM(price) AS total_user_revenue
+    FROM ecommerce_events
+    WHERE event_type = 'purchase'
+    GROUP BY user_id
+)
+
 
 
 -- Source:
