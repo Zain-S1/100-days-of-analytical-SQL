@@ -48,7 +48,9 @@ GROUP BY ut.buyer_type;
 -- Source:
 -- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
 
-------------------------------------------------------------
+------------------
 -- Results:
+------------------
+
 -- * Revenue Share by One-Time Buyers: 25%
 -- * Revenue Share by Repeat Buyers: 75%
