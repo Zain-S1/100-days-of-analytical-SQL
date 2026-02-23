@@ -33,7 +33,17 @@ purchase_revenue AS (
     GROUP BY user_id
 )
 
-
+SELECT
+    ut.buyer_type,
+    SUM(pr.total_user_revenue) AS revenue,
+    SUM(pr.total_user_revenue) + 1.0
+    / ( SELECT SUM(price)
+        FROM ecommerce_events
+        WHERE event_type = 'purchase' ) AS revenue_share
+FROM user_type ut
+JOIN purchase_revenue pr
+    ON ut.user_id = pr.user_id
+GROUP BY ut.buyer_type;
 
 -- Source:
 -- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
