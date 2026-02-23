@@ -1,29 +1,27 @@
--- Day 21: Funnel Analysis (View → Cart → Purchase)
+-- Day 22: Repeat Purchase Behavior
 
 -- Question:
--- How efficiently do user sessions progress 
--- from viewing products to completing a purchase?
+-- How many users made more than one purchase?
 
 -- Solution
-WITH session_steps AS (
-    SELECT
-        user_session,
-        MAX(CASE WHEN event_type = 'view' THEN 1 ELSE 0) AS viewed,
-        MAX(CASE WHEN event_type = 'cart' THEN 1 ELSE 0) AS added_to_cart,
-        MAX(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0) AS purchased
+WITH october_purchase AS (
+    SELECT *
     FROM ecommerce_events
-    GROUP BY user_session
+    WHERE event_type = 'purchase'
+),
+
+user_purchase_count AS (
+    SELECT 
+        user_id,
+        COUNT(*) AS purchase_count
+    FROM october_purchase
+    GROUP BY user_id
 )
 
-SELECT
-    COUNT(*) AS total_sessions,
-    SUM(viewed) AS view_sessions,
-    SUM(added_to_cart) AS cart_sessions,
-    SUM(purchased) AS purchase_sessions,
-    SUM(added_to_cart) * 1.0 / SUM(viewed) AS view_to_cart_rate,
-    SUM(purchased) * 1.0 / SUM(added_to_cart) AS cart_to_purchase_rate,
-    SUM(purchased) * 1.0 / COUNT(*) AS overall_conversion_rate
-FROM session_steps;
+SELECT 
+    COUNT(*) AS repeat_users
+FROM user_purchase_count
+WHERE purchase_count > 1;
 
 -- Source:
 -- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
