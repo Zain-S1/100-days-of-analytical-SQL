@@ -25,28 +25,18 @@ session_type AS (
             ELSE 'Single-Purchase Session'
         END AS session_type
     FROM session_purchase_counts
-),
-
-purchase_revenue AS (
-    SELECT
-        user_id,
-        SUM(price) AS total_user_revenue
-    FROM ecommerce_events
-    WHERE event_type = 'purchase'
-    GROUP BY user_id
 )
 
 SELECT
-    ut.buyer_type,
-    SUM(pr.total_user_revenue) AS revenue,
-    SUM(pr.total_user_revenue) + 1.0
-    / ( SELECT SUM(price)
-        FROM ecommerce_events
-        WHERE event_type = 'purchase' ) AS revenue_share
-FROM user_type ut
-JOIN purchase_revenue pr
-    ON ut.user_id = pr.user_id
-GROUP BY ut.buyer_type;
+    session_type,
+    COUNT(*) AS number_of_sessions,
+    SUM(session_revenue) AS total_revenue,
+    SUM(session_revenue) * 1.0 /
+        (SELECT SUM(price)
+         FROM ecommerce_events
+         WHERE event_type = 'purchase') AS revenue_share
+FROM session_classification
+GROUP BY session_type;
 
 -- Source:
 -- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
@@ -55,5 +45,5 @@ GROUP BY ut.buyer_type;
 -- Results:
 ------------------
 
--- * Revenue Share by One-Time Buyers: 25%
--- * Revenue Share by Repeat Buyers: 75%
+-- * Revenue Share from Multi-Purchase Session: 
+-- * Revenue Share from Single-Purchase Session: 
