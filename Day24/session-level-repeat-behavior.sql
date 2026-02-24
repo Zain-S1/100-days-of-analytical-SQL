@@ -5,23 +5,26 @@
 -- and how much revenue do they generate?
 
 -- Solution
-WITH user_purchase_counts AS (
+WITH session_purchase_counts AS (
     SELECT
-        user_id,
-        COUNT(*) AS purchase_count
+        user_session,
+        COUNT(*) AS purchase_count,
+        SUM(price) AS session_revenue
     FROM ecommerce_events
     WHERE event_type = 'purchase'
-    GROUP BY user_id
+    GROUP BY user_session
 ),
 
-user_type AS (
+session_type AS (
     SELECT
-    user_id,
+    user_session,
+    purchase_count,
+    session_revenue,
         CASE
-            WHEN purchase_count > 1 THEN 'Repeat Buyer'
-            ELSE 'One-Time Buyer'
-        END AS buyer_type
-    FROM user_purchase_counts
+            WHEN purchase_count > 1 THEN 'Multi-Purchase Session'
+            ELSE 'Single-Purchase Session'
+        END AS session_type
+    FROM session_purchase_counts
 ),
 
 purchase_revenue AS (
