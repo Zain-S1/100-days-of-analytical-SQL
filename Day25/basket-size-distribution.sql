@@ -7,7 +7,9 @@
 -- Solution
 SELECT
     products_in_session,
-    COUNT(*) AS number_of_sessions
+    COUNT(*) AS number_of_sessions,
+    COUNT(*) * 1.0 /
+        SUM(COUNT(*)) OVER () AS session_share
 FROM (
     SELECT
         user_session,
