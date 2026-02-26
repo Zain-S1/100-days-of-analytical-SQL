@@ -5,38 +5,18 @@
 -- per purchasing session?
 
 -- Solution
-WITH session_purchase_counts AS (
+WITH session_product_counts AS (
     SELECT
         user_session,
-        COUNT(*) AS purchase_count,
-        SUM(price) AS session_revenue
+        COUNT(*) AS products_in_session
     FROM ecommerce_events
     WHERE event_type = 'purchase'
     GROUP BY user_session
-),
-
-session_type AS (
-    SELECT
-    user_session,
-    purchase_count,
-    session_revenue,
-        CASE
-            WHEN purchase_count > 1 THEN 'Multi-Purchase Session'
-            ELSE 'Single-Purchase Session'
-        END AS session_type
-    FROM session_purchase_counts
 )
 
 SELECT
-    session_type,
-    COUNT(*) AS number_of_sessions,
-    SUM(session_revenue) AS total_revenue,
-    SUM(session_revenue) * 1.0 /
-        (SELECT SUM(price)
-         FROM ecommerce_events
-         WHERE event_type = 'purchase') AS revenue_share
-FROM session_classification
-GROUP BY session_type;
+    AVG(products_in_session) AS average_basket_size
+FROM session_product_counts;
 
 -- Source:
 -- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
