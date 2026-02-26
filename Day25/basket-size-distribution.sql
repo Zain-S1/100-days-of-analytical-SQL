@@ -1,4 +1,4 @@
--- Day 25: asket Size Distribution
+-- Day 25: Basket Size Distribution
 
 -- Question:
 -- How are purchasing sessions distributed by
