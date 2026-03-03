@@ -15,15 +15,11 @@
 
 ## 🔎 Observations
 
-- **Total Revenue reached 203.85M**, which indicates strong purchasing activity during the month.
-- **263,445 unique users generated purchases**, shows broad customer participation.
-- **466,799 purchasing sessions** suggest that many users completed multiple transactions
-  or that sessions often included multiple purchases.
-- **Session Conversion Rate was 7.27%**, meaning about 7 out of every 100 sessions ended with a purchase.
-- **Revenue is heavily concentrated in electronics**.
-  Smartphones alone account for a large share of total revenue (~156.7M), indicating strong demand
-  and possible dependency on this category.
-- **Average Order Value (AOV) was 436.69**, which suggests relatively high-value purchases.
+- - The dataset includes **1,000 total customers**, of which **832 remain active**, indicating a relatively strong retained customer base.
+- The churn rate is **16.8%**, meaning roughly 17 out of every 100 customers have left the service.
+- Monthly Recurring Revenue (MRR) shows steady growth from **January 2024 (1,850)** to a peak in **February 2025 (22,500)**, indicating strong subscription expansion during the first year.
+- Total revenue across all revenue types amounts to **249,800**.
+- The average Customer Acquisition Cost (CAC) is **110.11**.
 
 
 ## 🚀 Next Steps
@@ -32,4 +28,4 @@
 - Analyze churn drivers by plan_type.
 - Calculate LTV.
 - Compare CAC vs LTV.
-- Evaluate revenue growth dynamics.
+- Evaluate revenue growth dynamics
