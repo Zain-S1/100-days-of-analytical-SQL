@@ -46,31 +46,17 @@ GROUP BY month
 ORDER BY month;
 
 --------------------------------------------------
--- 5. Top 5 Categories by Revenue
+-- 5. Total Revenue
 --------------------------------------------------
 SELECT
-    category_code,
-    SUM(price) AS category_revenue
-FROM ecommerce_events
-WHERE event_type = 'purchase'
-GROUP BY category_code
-ORDER BY category_revenue DESC
-LIMIT 5;
+    SUM(amount) AS total_revenue
+FROM revenue;
 
 --------------------------------------------------
--- 6. Average Order Value (Session-Based)
+-- 6. Average Acquisition Cost
 --------------------------------------------------
-WITH session_revenue AS (
-    SELECT
-        user_session,
-        SUM(price) AS session_total
-    FROM ecommerce_events
-    WHERE event_type = 'purchase'
-    GROUP BY user_session
-)
-
 SELECT
-    AVG(session_total) AS average_order_value
-FROM session_revenue;
+    AVG(acquisition_cost) AS avg_ac
+FROM customers;
 
---------------------------------------------------
+-------------------------------------------------
