@@ -1,10 +1,18 @@
 -- Day 30: Kaggle Dataset Exploration — SaaS Subscription Analytics
 -- Dataset: SaaS Business Metrics: Customers, Plans & Revenue
 
--- Columns:
+-- Tables:
 
--- event_time, event_type, product_id, category_id,
--- category_code, brand, price, user_id, user_session
+-- (1) customers:
+-- customer_id, signup_date, plan_type,
+-- monthly_fee, acquisition_cost, churn_date
+
+-- (2) revenue:
+-- subscription_id, customer_id, month, monthly_fee,
+-- revenue_type, amount
+
+-- (3) subscription:
+-- subscription_id, customer_id, month, monthly_fee
 
 --------------------------------------------------
 -- 1. Total Revenue (Purchases Only)
