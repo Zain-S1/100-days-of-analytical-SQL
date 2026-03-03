@@ -11,7 +11,7 @@
 -- subscription_id, customer_id, month, monthly_fee,
 -- revenue_type, amount
 
--- (3) subscription:
+-- (3) subscriptions:
 -- subscription_id, customer_id, month, monthly_fee
 
 --------------------------------------------------
@@ -36,24 +36,14 @@ SELECT
 FROM customers;
 
 --------------------------------------------------
--- 4. Conversion Rate (Session-Level)
+-- 4. Monthly Recurring Revenue (MRR)
 --------------------------------------------------
-WITH sessions AS (
-    SELECT DISTINCT user_session
-    FROM ecommerce_events
-),
-purchase_sessions AS (
-    SELECT DISTINCT user_session
-    FROM ecommerce_events
-    WHERE event_type = 'purchase'
-)
-
 SELECT
-    COUNT(DISTINCT p.user_session) * 1.0
-    / COUNT(DISTINCT s.user_session) AS session_conversion_rate
-FROM sessions s
-LEFT JOIN purchase_sessions p
-    ON s.user_session = p.user_session;
+    month,
+    SUM(monthly_fee) AS mrr
+FROM subscription
+GROUP BY month
+ORDER BY month;
 
 --------------------------------------------------
 -- 5. Top 5 Categories by Revenue
