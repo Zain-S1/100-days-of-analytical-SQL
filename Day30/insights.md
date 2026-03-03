@@ -1,4 +1,4 @@
-# 📊 Day 30 – Behavioral E-Commerce Performance Summary
+# 📊 Day 30 – SaaS Business Metrics: Customers, Plans & Revenue
 
 
 ## 📌 Key Metrics
@@ -28,7 +28,8 @@
 
 ## 🚀 Next Steps
 
-- Compare performance with other months.
-- Analyze daily revenue trends.
-- Build funnel analysis (view → cart → purchase).
-- Evaluate repeat purchasing behavior.
+- Perform cohort retention analysis.
+- Analyze churn drivers by plan_type.
+- Calculate LTV.
+- Compare CAC vs LTV.
+- Evaluate revenue growth dynamics.
