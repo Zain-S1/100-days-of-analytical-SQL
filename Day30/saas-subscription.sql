@@ -1,5 +1,5 @@
--- Day 20: Kaggle Dataset Exploration — Behavioral E-Commerce Performance Summary
--- Dataset: E-Commerce Behavior Data from Multi-Category Store
+-- Day 30: Kaggle Dataset Exploration — SaaS Subscription Analytics
+-- Dataset: SaaS Business Metrics: Customers, Plans & Revenue
 
 -- Columns:
 
