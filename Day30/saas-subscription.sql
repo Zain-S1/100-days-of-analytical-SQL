@@ -15,28 +15,25 @@
 -- subscription_id, customer_id, month, monthly_fee
 
 --------------------------------------------------
--- 1. Total Revenue (Purchases Only)
+-- 1. Total Customers
 --------------------------------------------------
-SELECT
-    SUM(price) AS total_revenue
-FROM ecommerce_events
-WHERE event_type = 'purchase';
+SELECT COUNT(*) AS total_customers
+FROM customers;
 
 --------------------------------------------------
--- 2. Total Unique Purchasing Users
+-- 2. Active Customers
 --------------------------------------------------
-SELECT
-    COUNT(DISTINCT user_id) AS unique_purchasing_users
-FROM ecommerce_events
-WHERE event_type = 'purchase';
+SELECT COUNT(*) AS active_customers
+FROM customers
+WHERE churn_date IS NULL;
 
 --------------------------------------------------
--- 3. Total Sessions With Purchases
+-- 3. Churn Rate
 --------------------------------------------------
 SELECT
-    COUNT(DISTINCT user_session) AS purchasing_sessions
-FROM ecommerce_events
-WHERE event_type = 'purchase';
+    SUM(CASE WHEN churn_rate IS NOT NULL THEN 1 ELSE 0 END) * 1.0
+    / COUNT(*) AS churn_rate
+FROM customers;
 
 --------------------------------------------------
 -- 4. Conversion Rate (Session-Level)
