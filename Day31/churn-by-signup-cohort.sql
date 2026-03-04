@@ -25,4 +25,4 @@ GROUP BY products_in_session
 ORDER BY products_in_session;
 
 -- Source:
--- Kaggle Dataset — E-Commerce Behavior Data from Multi-Category Store
+-- Kaggle Dataset — SaaS Business Metrics: Customers, Plans & Revenue
