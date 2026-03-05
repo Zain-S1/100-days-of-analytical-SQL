@@ -1,26 +1,40 @@
 -- Day 32: Cohort Retention Analysis
 
 -- Question:
--- How does churn vary across signup cohorts?
+-- What percentage of customers remain active
+-- each month after signup?
 
 -- Solution
-WITH cohorts AS (
+WITH cohort_data AS (
+    SELECT
+        s.customer_id,
+        DATE_TRUNC('month', c.signup_date) AS cohort_month,
+        DATE_TRUNC('month', s.month) AS activity_month
+    FROM subscriptions s
+    JOIN customers c
+        ON s.customer_id = c.customer_id
+),
+
+cohort_index AS (
     SELECT
         customer_id,
-        DATE_TRUNC('month', signup_date) AS signup_cohort,
-        churn_date
-    FROM customers
+        cohort_month,
+        activity_month,
+        EXTRACT(YEAR FROM activity_month) * 12 +
+        EXTRACT(MONTH FROM activity_month)
+        -
+        (EXTRACT(YEAR FROM cohort_month) * 12 +
+         EXTRACT(MONTH FROM cohort_month)) AS month_number
+    FROM cohort_data
 )
 
 SELECT
-    signup_cohort,
-    COUNT(*) AS total_customers,
-    SUM(CASE WHEN churn_date IS NOT NULL THEN 1 ELSE 0 END) AS churned_customers,
-    SUM(CASE WHEN churn_date IS NOT NULL THEN 1 ELSE 0 END) * 1.0
-        / COUNT(*) AS churn_rate
-FROM cohorts
-GROUP BY signup_cohort
-ORDER BY signup_cohort;
+    cohort_month,
+    month_number,
+    COUNT(DISTINCT customer_id) AS active_customers
+FROM cohort_index
+GROUP BY cohort_month, month_number
+ORDER BY cohort_month, month_number;
 
 -- Source:
 -- Kaggle Dataset — SaaS Business Metrics: Customers, Plans & Revenue
