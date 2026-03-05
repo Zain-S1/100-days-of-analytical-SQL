@@ -1,4 +1,4 @@
--- Day 26: Churn by Signup Cohort
+-- Day 31: Churn by Signup Cohort
 
 -- Question:
 -- How does churn vary across signup cohorts?
