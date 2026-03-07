@@ -1,18 +1,20 @@
--- Day 3: Churn by Plan Type
+-- Day 34: Customer Lifetime Value (LTV)
 
 -- Question:
--- Which subscription plans experience the highest churn rates?
+-- How much revenue does a customer generate before they churn?
 
 -- Solution
+WITH customer_revenue AS (
+    SELECT
+        customer_id,
+        SUM(amount) AS lifetime_revenue
+    FROM revenue
+    GROUP BY customer_id
+)
+
 SELECT
-    plan_type,
-    COUNT(*) AS total_customers,
-    SUM(CASE WHEN churn_date IS NOT NULL THEN 1 ELSE 0 END) AS churned_customers,
-    SUM(CASE WHEN churn_date IS NOT NULL THEN 1 ELSE 0 END) * 1.0
-        / COUNT(*) AS churn_rate
-FROM customers
-GROUP BY plan_type
-ORDER BY churn_rate DESC;
+    AVG(lifetime_revenue) AS average_ltv
+FROM customer_revenue;
 
 -- Source:
 -- Kaggle Dataset — SaaS Business Metrics: Customers, Plans & Revenue
