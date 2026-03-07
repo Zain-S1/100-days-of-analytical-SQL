@@ -1,4 +1,4 @@
--- Day 3: Churn by Plan Type
+-- Day 33: Churn by Plan Type
 
 -- Question:
 -- Which subscription plans experience the highest churn rates?
