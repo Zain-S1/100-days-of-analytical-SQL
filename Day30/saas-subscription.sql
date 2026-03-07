@@ -56,7 +56,7 @@ FROM revenue;
 -- 6. Average Acquisition Cost
 --------------------------------------------------
 SELECT
-    AVG(acquisition_cost) AS avg_ac
+    AVG(acquisition_cost) AS average_cac
 FROM customers;
 
 -------------------------------------------------
