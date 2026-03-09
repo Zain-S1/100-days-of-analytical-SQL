@@ -1,7 +1,7 @@
 -- Day 36: Average Customer Lifetime
 
 -- Question:
--- How much revenue does a customer generate before they churn?
+-- On average, how long does a customer stay subscribed?
 
 -- Solution
 WITH customer_lifetime AS (
