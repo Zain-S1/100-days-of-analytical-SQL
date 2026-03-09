@@ -1,7 +1,7 @@
 -- Day 36: Customer Lifetime
 
 -- Question:
--- How much revenue does a customer generate before they churn?
+-- How long did each customer remain subscribed?
 
 -- Solution
 SELECT
