@@ -1,7 +1,7 @@
 -- Day 36: Lifetime by Plan Type
 
 -- Question:
--- How much revenue does a customer generate before they churn?
+-- Do customers on different subscription plans stay for different lengths of time?
 
 -- Solution
 WITH customer_lifetime AS (
