@@ -4,22 +4,32 @@
 -- What percentage of active customers cancel their subscription each month?
 
 -- Solution
-WITH customer_lifetime AS (
+WITH monthly_customers AS (
     SELECT
-        customer_id,
-        COUNT(DISTINCT month) AS months_active
+        month,
+        COUNT(DISTINCT customer_id) AS active_customers
     FROM subscription
-    GROUP BY customer_id
+    GROUP BY month
+),
+
+monthly_churn AS (
+    SELECT
+        strftime('%Y-%m', churn_date) AS churn_month,
+        COUNT(*) AS churned_customers
+    FROM customers
+    WHERE churn_date IS NOT NULL
+    GROUP BY churn_month
 )
 
 SELECT
-    c.plan_type,
-    AVG(cl.months_active) AS avg_lifetime_months
-FROM customers c
-JOIN customer_lifetime cl
-    ON c.customer_id = cl.customer_id
-GROUP BY c.plan_type
-ORDER BY avg_lifetime_months DESC;
+    mc.month,
+    mc.active_customers,
+    COALESCE(ch.churned_customers, 0) AS churned_customers,
+    COALESCE(ch.churned_customers, 0) * 1.0 / mc.active_customers AS churn_rate
+FROM monthly_customers mc
+LEFT JOIN monthly_churn ch
+    ON mc.month = ch.churn_month
+ORDER BY mc.month;
 
 -- Source:
 -- Kaggle Dataset — SaaS Business Metrics: Customers, Plans & Revenue
