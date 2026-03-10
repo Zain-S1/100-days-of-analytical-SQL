@@ -1,7 +1,7 @@
--- Day 36: Lifetime by Plan Type
+-- Day 37: Monthly Churn Rate
 
 -- Question:
--- Do customers on different subscription plans stay for different lengths of time?
+-- What percentage of active customers cancel their subscription each month?
 
 -- Solution
 WITH customer_lifetime AS (
