@@ -14,7 +14,7 @@ WITH monthly_customers AS (
 
 monthly_churn AS (
     SELECT
-        strftime('%Y-%m', churn_date) AS churn_month,
+        DATE_FORMAT(churn_date, '%Y-%m') AS churn_month,
         COUNT(*) AS churned_customers
     FROM customers
     WHERE churn_date IS NOT NULL
