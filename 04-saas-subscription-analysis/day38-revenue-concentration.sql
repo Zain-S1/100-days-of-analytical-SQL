@@ -1,35 +1,37 @@
 -- Day 38: Revenue Concentration by Customer
 
 -- Question:
--- What percentage of active customers cancel their subscription each month?
+-- Is revenue evenly distributed across customers, 
+-- or is it concentrated among a small group of high-value users?
 
 -- Solution
-WITH monthly_customers AS (
+WITH customer_revenue AS (
     SELECT
-        month,
-        COUNT(DISTINCT customer_id) AS active_customers
-    FROM subscription
-    GROUP BY month
+        customer_id,
+        SUM(amount) AS lifetime_revenue
+    FROM revenue
+    GROUP BY customer_id
 ),
 
-monthly_churn AS (
+revenue_segments AS (
     SELECT
-        DATE_FORMAT(churn_date, '%Y-%m') AS churn_month,
-        COUNT(*) AS churned_customers
-    FROM customers
-    WHERE churn_date IS NOT NULL
-    GROUP BY churn_month
+        customer_id,
+        lifetime_revenue,
+        CASE
+            WHEN lifetime_revenue >= 500 THEN 'High Value'
+            WHEN lifetime_revenue >= 200 THEN 'Medium Value'
+            ELSE 'Low Value'
+        END AS customer_segment
+    FROM customer_revenue
 )
 
 SELECT
-    mc.month,
-    mc.active_customers,
-    COALESCE(ch.churned_customers, 0) AS churned_customers,
-    COALESCE(ch.churned_customers, 0) * 1.0 / mc.active_customers AS churn_rate
-FROM monthly_customers mc
-LEFT JOIN monthly_churn ch
-    ON mc.month = ch.churn_month
-ORDER BY mc.month;
+    customer_segment,
+    COUNT(*) AS customers,
+    SUM(lifetime_revenue) AS total_revenue
+FROM revenue_segments
+GROUP BY customer_segment
+ORDER BY total_revenue DESC;
 
 -- Source:
 -- Kaggle Dataset — SaaS Business Metrics: Customers, Plans & Revenue
