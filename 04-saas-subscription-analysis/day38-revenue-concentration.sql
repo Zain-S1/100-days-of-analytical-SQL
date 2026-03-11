@@ -1,4 +1,4 @@
--- Day 37: Monthly Churn Rate
+-- Day 38: Revenue Concentration by Customer
 
 -- Question:
 -- What percentage of active customers cancel their subscription each month?
