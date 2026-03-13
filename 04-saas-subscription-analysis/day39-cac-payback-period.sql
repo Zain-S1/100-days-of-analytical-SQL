@@ -1,4 +1,4 @@
--- Day 38: Revenue Concentration by Customer
+-- Day 39: CAC Payback Period
 
 -- Question:
 -- How many months of subscription revenue are required to 
