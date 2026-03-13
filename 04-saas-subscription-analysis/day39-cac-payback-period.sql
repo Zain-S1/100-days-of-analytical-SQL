@@ -1,9 +1,8 @@
-How long it takes to recover acquisition cost from subscription revenue.
 -- Day 38: Revenue Concentration by Customer
 
 -- Question:
--- Is revenue evenly distributed across customers, 
--- or is it concentrated among a small group of high-value users?
+-- How many months of subscription revenue are required to 
+-- recover the cost of acquiring a customer?
 
 -- Solution
 WITH customer_lifetime AS (
