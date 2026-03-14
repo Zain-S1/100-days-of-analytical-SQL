@@ -15,14 +15,16 @@
 --------------------------------------------------
 SELECT
     COUNT(*) AS total_deliveries
-FROM Delivery_Logistics;
+FROM deliveries;
 
 --------------------------------------------------
 -- 2. On-Time Delivery Rate
 --------------------------------------------------
 SELECT
-    SUM(CASE WHEN delayed = 0 THEN 1 ELSE 0 END) * 1.0
-    / COUNT(*) AS on_time_rate
+    SUM(CASE
+        WHEN delivery_time_hours <= expected_time_hours
+        THEN 1 ELSE 0
+    END) * 1.0 / COUNT(*) AS on_time_delivery_rate
 FROM deliveries;
 
 --------------------------------------------------
@@ -33,19 +35,28 @@ SELECT
 FROM deliveries;
 
 --------------------------------------------------
--- 4. Average Customer Rating
+-- 4. Average Delivery Cost
+--------------------------------------------------
+SELECT
+    AVG(delivery_cost) AS avg_delivery_cost
+FROM deliveries;
+
+--------------------------------------------------
+-- 5. Average Customer Rating
 --------------------------------------------------
 SELECT
     AVG(delivery_rating) AS avg_delivery_rating
 FROM deliveries;
 
 --------------------------------------------------
--- 5. Delay Rate by Delivery Mode
+-- 6. Delay Rate by Delivery Mode
 --------------------------------------------------
 SELECT
     delivery_mode,
-    SUM(CASE WHEN delayed = 1 THEN 1 ELSE 0 END) * 1.0
-        / COUNT(*) AS delay_rate
+    SUM(CASE
+        WHEN delivery_time_hours > expected_time_hours
+        THEN 1 ELSE 0
+    END) * 1.0 / COUNT(*) AS delay_rate
 FROM deliveries
 GROUP BY delivery_mode
 ORDER BY delay_rate DESC;
