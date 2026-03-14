@@ -18,12 +18,12 @@ SELECT
 FROM Delivery_Logistics;
 
 --------------------------------------------------
--- 2. Total Unique Purchasing Users
+-- 2. On-Time Delivery Rate
 --------------------------------------------------
 SELECT
-    COUNT(DISTINCT user_id) AS unique_purchasing_users
-FROM ecommerce_events
-WHERE event_type = 'purchase';
+    SUM(CASE WHEN delayed = 0 THEN 1 ELSE 0 END) * 1.0
+    / COUNT(*) AS on_time_rate
+FROM deliveries;
 
 --------------------------------------------------
 -- 3. Total Sessions With Purchases
