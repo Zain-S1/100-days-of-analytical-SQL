@@ -26,12 +26,11 @@ SELECT
 FROM deliveries;
 
 --------------------------------------------------
--- 3. Total Sessions With Purchases
+-- 3. Average Delivery Time
 --------------------------------------------------
 SELECT
-    COUNT(DISTINCT user_session) AS purchasing_sessions
-FROM ecommerce_events
-WHERE event_type = 'purchase';
+    AVG(delivery_time_hours) AS avg_delivery_time
+FROM deliveries;
 
 --------------------------------------------------
 -- 4. Conversion Rate (Session-Level)
