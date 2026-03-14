@@ -24,8 +24,8 @@
 
 ## 🚀 Next Steps
 
-- Perform cohort retention analysis.
-- Analyze churn drivers by plan_type.
-- Calculate LTV.
-- Compare CAC vs LTV.
-- Evaluate revenue growth dynamics
+- Analyze factors driving delivery delays
+- Evaluate partner performance across regions
+- Study weather impact on delivery time
+- Compare cost efficiency across vehicle types
+- Identify operational bottlenecks
