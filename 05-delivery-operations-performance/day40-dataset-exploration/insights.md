@@ -5,12 +5,12 @@
 
 | Metric | Description |
 |--------|------------|
-| **Total Deliveries** | Total number of delivery records. |
-| **On-Time Delivery Rate** | Percentage of deliveries completed without delay. |
-| **Average Delivery Time** | Average time taken to complete deliveries. |
-| **Average Delivery Cost** | Mean delivery cost per shipment. |
-| **Average Delivery Rating** | Customer satisfaction score. |
-| **Delay Rate by Mode** | Frequency of delays across delivery service levels. |
+| **Total Deliveries** | Total number of delivery records |
+| **On-Time Delivery Rate** | Percentage of deliveries completed without delay |
+| **Average Delivery Time** | Average time taken to complete deliveries |
+| **Average Delivery Cost** | Mean delivery cost per shipment |
+| **Average Delivery Rating** | Customer satisfaction score |
+| **Delay Rate by Mode** | Frequency of delays across delivery service levels |
 
 
 ## 🔎 Observations
