@@ -1,5 +1,5 @@
--- Day 20: Kaggle Dataset Exploration — Behavioral E-Commerce Performance Summary
--- Dataset: E-Commerce Behavior Data from Multi-Category Store
+-- Day 40: Kaggle Dataset Exploration — Delivery Operations Performance Summary
+-- Dataset: Delivery Logistics Performance & Operations
 
 -- Columns:
 
