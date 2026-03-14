@@ -62,3 +62,10 @@ GROUP BY delivery_mode
 ORDER BY delay_rate DESC;
 
 --------------------------------------------------
+-- 7. Average Delay
+--------------------------------------------------
+SELECT
+    AVG(delivery_time_hours - expected_time_hours) AS avg_delay_hours
+FROM deliveries;
+
+--------------------------------------------------
