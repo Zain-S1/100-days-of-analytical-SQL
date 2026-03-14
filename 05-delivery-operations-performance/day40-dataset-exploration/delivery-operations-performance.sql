@@ -3,8 +3,12 @@
 
 -- Columns:
 
--- event_time, event_type, product_id, category_id,
--- category_code, brand, price, user_id, user_session
+-- delivery_id, delivery_partner, package_type,
+-- vehicle_type, delivery_mode, region,
+-- weather_condition, distance_km,
+-- package_weight_kg, delivery_time_hours,
+-- expected_time_hours, delayed,
+-- delivery_status, delivery_rating, delivery_cost
 
 --------------------------------------------------
 -- 1. Total Revenue (Purchases Only)
