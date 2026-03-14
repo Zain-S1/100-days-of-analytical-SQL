@@ -40,31 +40,14 @@ SELECT
 FROM deliveries;
 
 --------------------------------------------------
--- 5. Top 5 Categories by Revenue
+-- 5. Delay Rate by Delivery Mode
 --------------------------------------------------
 SELECT
-    category_code,
-    SUM(price) AS category_revenue
-FROM ecommerce_events
-WHERE event_type = 'purchase'
-GROUP BY category_code
-ORDER BY category_revenue DESC
-LIMIT 5;
-
---------------------------------------------------
--- 6. Average Order Value (Session-Based)
---------------------------------------------------
-WITH session_revenue AS (
-    SELECT
-        user_session,
-        SUM(price) AS session_total
-    FROM ecommerce_events
-    WHERE event_type = 'purchase'
-    GROUP BY user_session
-)
-
-SELECT
-    AVG(session_total) AS average_order_value
-FROM session_revenue;
+    delivery_mode,
+    SUM(CASE WHEN delayed = 1 THEN 1 ELSE 0 END) * 1.0
+        / COUNT(*) AS delay_rate
+FROM deliveries
+GROUP BY delivery_mode
+ORDER BY delay_rate DESC;
 
 --------------------------------------------------
