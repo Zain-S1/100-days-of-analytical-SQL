@@ -11,12 +11,11 @@
 -- delivery_status, delivery_rating, delivery_cost
 
 --------------------------------------------------
--- 1. Total Revenue (Purchases Only)
+-- 1. Total Deliveries
 --------------------------------------------------
 SELECT
-    SUM(price) AS total_revenue
-FROM ecommerce_events
-WHERE event_type = 'purchase';
+    COUNT(*) AS total_deliveries
+FROM Delivery_Logistics;
 
 --------------------------------------------------
 -- 2. Total Unique Purchasing Users
