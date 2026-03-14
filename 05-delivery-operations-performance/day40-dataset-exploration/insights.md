@@ -1,16 +1,16 @@
-# 📊 Day 40 – Delivery Logistics Operations Performance
+# 📊 Day 40 – Delivery Logistics Performance & Operations
 
 
 ## 📌 Key Metrics
 
 | Metric | Description |
 |--------|------------|
-| **Total Customers** | Total users acquired. |
-| **Active Customers** | Customers without churn_date. |
-| **Churn Rate** | Percentage of customers who churned. |
-| **Monthly Recurring Revenue (MRR)** | Recurring subscription revenue per month. |
-| **Total Revenue** | Total revenue across all revenue types. |
-| **Average CAC** | Average customer acquisition cost. |
+| **Total Deliveries** | Total number of delivery records. |
+| **On-Time Delivery Rate** | Percentage of deliveries completed without delay. |
+| **Average Delivery Time** | Average time taken to complete deliveries. |
+| **Average Delivery Cost** | Mean delivery cost per shipment. |
+| **Average Delivery Rating** | Customer satisfaction score. |
+| **Delay Rate by Mode** | Frequency of delays across delivery service levels. |
 
 
 ## 🔎 Observations
