@@ -20,4 +20,4 @@ GROUP BY weather_condition
 ORDER BY delay_rate DESC;
 
 -- Source:
--- Kaggle Dataset — SaaS Business Metrics: Customers, Plans & Revenue
+-- Kaggle Dataset — Delivery Logistics Performance & Operations
