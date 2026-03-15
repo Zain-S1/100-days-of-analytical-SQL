@@ -1,7 +1,7 @@
--- Day 33: Churn by Plan Type
+-- Day 41: Weather Impact on Delivery Delays
 
 -- Question:
--- Which subscription plans experience the highest churn rates?
+-- How does weather condition affect delivery delays?
 
 -- Solution
 SELECT
