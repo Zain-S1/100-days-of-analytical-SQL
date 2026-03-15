@@ -10,16 +10,20 @@
 | **Average Delivery Time** | Average time taken to complete deliveries |
 | **Average Delivery Cost** | Mean delivery cost per shipment |
 | **Average Delivery Rating** | Customer satisfaction score |
-| **Delay Rate by Mode** | Frequency of delays across delivery service levels |
+| **Delay Rate by Delivery Mode** | Frequency of delays across delivery service levels |
 
 
 ## 🔎 Observations
 
-- The dataset includes **1,000 total customers**, of which **832 remain active**, indicating a relatively strong retained customer base.
-- The churn rate is **16.8%**, meaning roughly 17 out of every 100 customers have left the service.
-- Monthly Recurring Revenue (MRR) shows steady growth from **January 2024 (1,850)** to a peak in **February 2025 (22,500)**, indicating strong subscription expansion during the first year.
-- Total revenue across all revenue types amounts to **249,800**.
-- The average Customer Acquisition Cost (CAC) is **110.11**.
+- The on-time delivery rate is **78.14%**, meaning roughly **4 out of every 5 deliveries arrive on schedule**, while about **21.86% experience delays**.
+- The **average delivery time is 6.25 hours**, suggesting that deliveries are typically completed within the same day.
+- The **average delivery cost is 864.94**, which provides a baseline for evaluating logistics cost efficiency.
+- The **average delivery rating is 3.67**, indicating moderately positive customer satisfaction but also room for service improvement.
+- Delay rates vary significantly by service level.
+    * **Express deliveries experience the highest delay rate (64.67%)**, suggesting operational challenges with faster service promises.
+    * **Same-day deliveries show moderate delays (22.68%)**, reflecting the difficulty of tight delivery windows.
+    * **Two-day deliveries are almost always on time (0.17% delay rate)**.
+    * **Standard deliveries show no delays**, indicating that longer delivery windows allow for more reliable fulfillment.
 
 
 ## 🚀 Next Steps
