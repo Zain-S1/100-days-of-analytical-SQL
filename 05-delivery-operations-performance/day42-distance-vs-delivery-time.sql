@@ -1,7 +1,7 @@
--- Day 41: Weather Impact on Delivery Delays
+-- Day 42: Distance vs Delivery Time
 
 -- Question:
--- How does weather condition affect delivery delays?
+-- How does distance impact delivery time and delays?
 
 -- Solution
 SELECT
