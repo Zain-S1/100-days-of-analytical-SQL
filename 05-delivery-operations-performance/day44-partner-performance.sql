@@ -1,5 +1,4 @@
 -- Day 44: Delivery Partner Performance
--- Dataset: Delivery Operations Data
 
 -- Question:
 -- How do delivery partners compare in performance?
