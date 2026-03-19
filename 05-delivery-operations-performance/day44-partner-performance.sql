@@ -1,7 +1,8 @@
--- Day 43: Vehicle Type Efficiency
+-- Day 44: Delivery Partner Performance
+-- Dataset: Delivery Operations Data
 
 -- Question:
--- How does vehicle type impact delivery time, delays, and cost?
+-- How do delivery partners compare in performance?
 
 -- Solution
 SELECT
