@@ -6,7 +6,7 @@
 
 -- Solution
 SELECT
-    vehicle_type,
+    delivery_partner,
     COUNT(*) AS total_deliveries,
     AVG(delivery_time_hours) AS avg_delivery_time,
     AVG(delivery_cost) AS avg_delivery_cost,
@@ -16,7 +16,7 @@ SELECT
         THEN 1 ELSE 0
     END) * 1.0 / COUNT(*) AS delay_rate
 FROM deliveries
-GROUP BY vehicle_type
+GROUP BY delivery_partner
 ORDER BY delay_rate DESC;
 
 -- Source:
