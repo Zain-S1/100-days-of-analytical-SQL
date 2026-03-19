@@ -1,7 +1,7 @@
--- Day 41: Weather Impact on Delivery Delays
+-- Day 43: Vehicle Type Efficiency
 
 -- Question:
--- How does weather condition affect delivery delays?
+-- How does vehicle type impact delivery time, delays, and cost?
 
 -- Solution
 SELECT
