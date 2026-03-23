@@ -5,7 +5,7 @@
 
 -- Solution
 --------------------------------------------------
--- 1️⃣ Average Delivery Time by Distance Bucket
+-- 1️⃣ Performance by Package Type
 --------------------------------------------------
 SELECT
     CASE
@@ -21,7 +21,7 @@ GROUP BY distance_bucket
 ORDER BY avg_delivery_time;
 
 --------------------------------------------------
--- 2️⃣ Delay Rate by Distance Bucket
+-- 2️⃣ Performance by Weight Bucket
 --------------------------------------------------
 SELECT
     CASE
