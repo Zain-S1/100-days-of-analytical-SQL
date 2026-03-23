@@ -1,7 +1,7 @@
 -- Day 46: Package Weight & Type Impact
 
 -- Question:
--- How does delivery performance vary across regions?
+-- How do package weight and type affect delivery performance?
 
 -- Solution
 SELECT
