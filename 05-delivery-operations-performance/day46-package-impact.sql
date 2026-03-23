@@ -8,17 +8,18 @@
 -- 1️⃣ Performance by Package Type
 --------------------------------------------------
 SELECT
-    CASE
-        WHEN distance_km < 5 THEN '0-5 km'
-        WHEN distance_km < 10 THEN '5-10 km'
-        WHEN distance_km < 20 THEN '10-20 km'
-        ELSE '20+ km'
-    END AS distance_bucket,
+    package_type,
+    COUNT(*) AS total_deliveries,
     AVG(delivery_time_hours) AS avg_delivery_time,
-    COUNT(*) AS deliveries
+    AVG(delivery_cost) AS avg_delivery_cost,
+    AVG(delivery_rating) AS avg_rating,
+    SUM(CASE
+        WHEN delivery_time_hours > expected_time_hours
+        THEN 1 ELSE 0
+    END) * 1.0 / COUNT(*) AS delay_rate
 FROM deliveries
-GROUP BY distance_bucket
-ORDER BY avg_delivery_time;
+GROUP BY package_type
+ORDER BY delay_rate DESC;
 
 --------------------------------------------------
 -- 2️⃣ Performance by Weight Bucket
