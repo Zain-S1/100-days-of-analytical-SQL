@@ -32,5 +32,9 @@ FROM deliveries
 GROUP BY time_bucket
 ORDER BY avg_rating DESC;
 
+--------------------------------------------------
+-- 3️⃣ Rating by Delivery Cost Bucket
+--------------------------------------------------
+
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
