@@ -22,21 +22,15 @@ GROUP BY delivery_status_group;
 --------------------------------------------------
 SELECT
     CASE
-        WHEN package_weight_kg < 1 THEN '0-1 kg'
-        WHEN package_weight_kg < 5 THEN '1-5 kg'
-        WHEN package_weight_kg < 10 THEN '5-10 kg'
-        ELSE '10+ kg'
-    END AS weight_bucket,
-    COUNT(*) AS total_deliveries,
-    AVG(delivery_time_hours) AS avg_delivery_time,
-    AVG(delivery_cost) AS avg_delivery_cost,
-    SUM(CASE
-        WHEN delivery_time_hours > expected_time_hours
-        THEN 1 ELSE 0
-    END) * 1.0 / COUNT(*) AS delay_rate
+        WHEN delivery_time_hours < 3 THEN '< 3 hrs'
+        WHEN delivery_time_hours < 6 THEN '3-6 hrs'
+        WHEN delivery_time_hours < 10 THEN '6-10 hrs'
+        ELSE '10+ hrs'
+    END AS time_bucket,
+    AVG(delivery_rating) AS avg_rating
 FROM deliveries
-GROUP BY weight_bucket
-ORDER BY delay_rate DESC;
+GROUP BY time_bucket
+ORDER BY avg_rating DESC;
 
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
