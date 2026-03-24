@@ -5,7 +5,7 @@
 
 -- Solution
 --------------------------------------------------
--- 1️⃣ Performance by Package Type
+-- 1️⃣ Rating by Delay Status
 --------------------------------------------------
 SELECT
     package_type,
@@ -22,7 +22,7 @@ GROUP BY package_type
 ORDER BY delay_rate DESC;
 
 --------------------------------------------------
--- 2️⃣ Performance by Weight Bucket
+-- 2️⃣ Rating by Delivery Time Bucket
 --------------------------------------------------
 SELECT
     CASE
