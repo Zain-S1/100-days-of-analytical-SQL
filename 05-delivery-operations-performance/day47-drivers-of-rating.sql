@@ -35,6 +35,16 @@ ORDER BY avg_rating DESC;
 --------------------------------------------------
 -- 3️⃣ Rating by Delivery Cost Bucket
 --------------------------------------------------
+SELECT
+    CASE
+        WHEN delivery_cost < 500 THEN 'Low Cost'
+        WHEN delivery_cost < 1000 THEN 'Medium Cost'
+        ELSE 'High Cost'
+    END AS cost_bucket,
+    AVG(delivery_rating) AS avg_rating
+FROM deliveries
+GROUP BY cost_bucket
+ORDER BY avg_rating DESC;
 
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
