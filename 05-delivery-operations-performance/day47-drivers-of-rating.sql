@@ -8,18 +8,14 @@
 -- 1️⃣ Rating by Delay Status
 --------------------------------------------------
 SELECT
-    package_type,
-    COUNT(*) AS total_deliveries,
-    AVG(delivery_time_hours) AS avg_delivery_time,
-    AVG(delivery_cost) AS avg_delivery_cost,
+    CASE
+        WHEN delivery_time_hours > expected_time_hours THEN 'Delayed'
+        ELSE 'On-Time'
+    END AS delivery_status_group,
     AVG(delivery_rating) AS avg_rating,
-    SUM(CASE
-        WHEN delivery_time_hours > expected_time_hours
-        THEN 1 ELSE 0
-    END) * 1.0 / COUNT(*) AS delay_rate
+    COUNT(*) AS deliveries
 FROM deliveries
-GROUP BY package_type
-ORDER BY delay_rate DESC;
+GROUP BY delivery_status_group;
 
 --------------------------------------------------
 -- 2️⃣ Rating by Delivery Time Bucket
