@@ -5,18 +5,28 @@
 
 -- Solution
 SELECT
+    delivery_mode,
+    weather_condition,
     vehicle_type,
+    region,
     COUNT(*) AS total_deliveries,
-    AVG(delivery_time_hours) AS avg_delivery_time,
-    AVG(delivery_cost) AS avg_delivery_cost,
-    AVG(delivery_rating) AS avg_rating,
+    SUM(CASE
+        WHEN delivery_time_hours > expected_time_hours
+        THEN 1 ELSE 0
+    END) AS delayed_deliveries,
     SUM(CASE
         WHEN delivery_time_hours > expected_time_hours
         THEN 1 ELSE 0
     END) * 1.0 / COUNT(*) AS delay_rate
 FROM deliveries
-GROUP BY vehicle_type
-ORDER BY delay_rate DESC;
+GROUP BY
+    delivery_mode,
+    weather_condition,
+    vehicle_type,
+    region
+HAVING COUNT(*) >= 50   -- filter small/noisy groups
+ORDER BY delay_rate DESC
+LIMIT 10;
 
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
