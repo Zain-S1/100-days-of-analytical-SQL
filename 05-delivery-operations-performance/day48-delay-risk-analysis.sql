@@ -1,7 +1,7 @@
--- Day 43: Vehicle Type Efficiency
+-- Day 48: Delay Risk Analysis
 
 -- Question:
--- How does vehicle type impact delivery time, delays, and cost?
+-- Which combinations of factors lead to the highest delay rates?
 
 -- Solution
 SELECT
