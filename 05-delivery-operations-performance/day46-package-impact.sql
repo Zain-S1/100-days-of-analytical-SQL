@@ -42,5 +42,7 @@ FROM deliveries
 GROUP BY weight_bucket
 ORDER BY delay_rate DESC;
 
+
+--------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
