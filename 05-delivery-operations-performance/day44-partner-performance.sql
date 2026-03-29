@@ -18,5 +18,12 @@ FROM deliveries
 GROUP BY delivery_partner
 ORDER BY delay_rate DESC;
 
+-- Insights:
+-- * Delivery partner is a major driver of performance
+-- * Top performers consistently outperform across metrics 
+--   (faster delivery times → lower delays → higher customer ratings)
+-- * Cost is NOT a reliable indicator of service quality.
+
+--------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
