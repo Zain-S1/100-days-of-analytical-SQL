@@ -19,5 +19,11 @@ FROM deliveries
 GROUP BY weather_condition
 ORDER BY delay_rate DESC;
 
+-- Insights:
+-- * Stormy weather has the worst performance; with nearly 1 in 3+ deliveries delayed.
+-- * Rain significantly impacts operations, only slightly better than stormy conditions.
+-- * Fog causes moderate disruption, likely due to low visibility.
+
+--------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
