@@ -38,5 +38,10 @@ FROM deliveries
 GROUP BY distance_bucket
 ORDER BY delay_rate DESC;
 
+-- Insights:
+-- * Delays increase sharply after 20 km, with a delay rate of 22.6%.
+-- * This is ~2x higher than all shorter distance buckets → clear efficiency drop-off threshold.
+
+--------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
