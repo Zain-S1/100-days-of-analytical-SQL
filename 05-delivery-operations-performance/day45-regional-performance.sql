@@ -18,6 +18,14 @@ FROM deliveries
 GROUP BY region
 ORDER BY delay_rate DESC;
 
+-- Insights:
+-- * Better regions are faster and better rated
+--   → Confirms that speed and reliability drive customer satisfaction.
+-- * Higher delays align with slower delivery times
+--   → Suggests systemic inefficiencies (traffic, density, routing).
+-- * Cost differences are minor and not decisive
+--   → Again, confirms that cost ≠ quality.
+
 --------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
