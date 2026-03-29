@@ -18,5 +18,9 @@ FROM deliveries
 GROUP BY vehicle_type
 ORDER BY delay_rate DESC;
 
+-- Insights:
+-- * Overall, delays are system-driven (distance, routing, weather), not vehicle-driven
+
+--------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
