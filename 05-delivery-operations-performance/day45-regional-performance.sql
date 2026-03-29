@@ -18,5 +18,6 @@ FROM deliveries
 GROUP BY region
 ORDER BY delay_rate DESC;
 
+--------------------------------------------------
 -- Source:
 -- Kaggle Dataset — Delivery Logistics Performance & Operations
